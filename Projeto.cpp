@@ -118,46 +118,69 @@ int main()
 {
 	int opcao=0; // Definindo as varáveis
 	int laco=1;
-
-	for(laco=1;laco=1;) // o 1ºx é o inicio e o 2ºx é a saída. Se ambos forem 1, sempra ficará preso alo, se repetindo pra sempre.
+	char senhadigitada[]="a";
+	int comparacao;
+	
+		printf("--- Cartório da EBAC ---\n\n");
+		printf("Login de Administrador!\n\n Digite sua senha:");
+		scanf("%s, senhadigitada");
+		
+		comparacao = strcmp(senhadigitada, "admin");
+		
+	if(comparacao == 0)
 	{
-		
+	
 		system("cls");
-		
-		setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem 
-	
-	
-		printf("--- Cartório da EBAC ---\n\n"); // Inicio do menu 
-		printf("Escolha a opção desejada no menu:\n\n");
-		printf("\t1- Registrar nomes \n");
-		printf("\t2- Consultar nomes \n");
-		printf("\t3- Deletar nomes \n\n"); // fim do menu
-	
-		scanf("%d", &opcao); // armagenando as escolhas do usuario
-	
-		system("cls"); // Comando para o limpar a tela 
-		
-		
-		switch(opcao) // inicio da seleção das funções
+		for(laco=1;laco=1;) // o 1ºx é o inicio e o 2ºx é a saída. Se ambos forem 1, sempra ficará preso alo, se repetindo pra sempre.
 		{
-			case 1:
-			registro();
-			break; // finalização desse case.
-			
-			case 2: 
-			consulta();
-			break;
-			
-			case 3: 
-			deletar();
-			break;
-			
-			default: // em caso de situações que não correspondam com os cases em cena.
-			printf("Essa opção não está disponível.\n");
-			system("pause");
-			break;
-		}
 		
+			system("cls");
+		
+			setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem 
 	
+	
+			printf("--- Cartório da EBAC ---\n\n"); // Inicio do menu 
+			printf("Escolha a opção desejada no menu:\n\n");
+			printf("\t1- Registrar nomes \n");
+			printf("\t2- Consultar nomes \n");
+			printf("\t3- Deletar nomes \n\n"); 
+			printf("\t4- Sair do sistema\n\n");
+			
+		
+			scanf("%d", &opcao); // armagenando as escolhas do usuario
+	
+			system("cls"); // Comando para o limpar a tela 
+		
+		
+			switch(opcao) // inicio da seleção das funções
+			{
+				case 1:
+				registro();
+				break; // finalização desse case.
+			
+				case 2: 
+				consulta();
+				break;
+			
+				case 3: 
+				deletar();
+				break;
+			
+				case 4:
+				printf("Obrigado por utilizar o sistema.\n");
+				return 0;
+				break;
+			
+				default: // em caso de situações que não correspondam com os cases em cena.
+				printf("Essa opção não está disponível.\n");
+				system("pause");
+				break;
+			}
+		}	
 	}
+	else
+	printf("Senha incorreta. Tente novamente");
+	
 }
+
+
